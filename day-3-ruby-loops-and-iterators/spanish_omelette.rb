@@ -68,7 +68,6 @@ steps = [
   { description: "Put everything in the ovendish", action: "generic_recipe_step" },
   { description: "Cover the top of the ovendish with some pastry", action: "generic_recipe_step"},
   { description: "Bake for about 25 minutes untill it nice light brown", action: "generic_recipe_step"},
-  { description: "Cook a few more minutes and slide on to a plate and cool for 10 minutes before serving", action: "generic_recipe_step" }
 ]
 
 print_divider
@@ -76,4 +75,50 @@ puts "See below the different steps to follow:"
 
 steps.each_with_index do |step, index|
   puts (index + 1).to_s + ") " + step[:description]
+end
+
+def generic_recipe_step
+  puts "On it!"
+  print_progress_bar
+end
+
+def scrape_potatoes
+  counter = 0
+  while counter < NUM_CARROTS
+    counter += 1
+    print "Scraping carrot #{counter}"
+    print_progress_bar
+  end
+end
+
+def cut_potatoes
+  counter = 0
+  while counter < NUM_CARROTS
+    counter += 1
+    print "Cutting carrot #{counter} into thick slices"
+    print_progress_bar
+  end
+end
+
+def add_potatoes_to_pan
+  for counter in 1..NUM_CARROTS
+    print "Adding carrot #{counter} to the pan."
+    print_progress_bar
+  end
+end
+
+def break_eggs
+  counter = 0
+  while counter < NUM_EGGS
+    counter += 1
+    print "Breaking egg #{counter}"
+    print_progress_bar
+  end
+end
+
+def ask_if_ready(step, index)
+  puts "Are you ready for step #{index + 1}?\n(#{step[:description]})"
+  answer = gets.chomp
+
+  answer.upcase == 'Y'
 end
