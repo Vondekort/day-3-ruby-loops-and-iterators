@@ -8,11 +8,11 @@ def print_progress_bar
   puts "\n"
 end
 
-NUM_CARRETS = 8
+NUM_CARROTS = 8
 NUM_EGGS = 2
 
 ingredients = [
-  { name: 'carette', quantity: NUM_CARRETS },
+  { name: 'carrots', quantity: NUM_CARROTS },
   { name: 'eggs', quantity: NUM_EGGS },
   { name: 'onion', quantity: 1 },
   { name: 'cream', quantity: '150ml' },
@@ -70,3 +70,10 @@ steps = [
   { description: "Bake for about 25 minutes untill it nice light brown", action: "generic_recipe_step"},
   { description: "Cook a few more minutes and slide on to a plate and cool for 10 minutes before serving", action: "generic_recipe_step" }
 ]
+
+print_divider
+puts "See below the different steps to follow:"
+
+steps.each_with_index do |step, index|
+  puts (index + 1).to_s + ") " + step[:description]
+end
