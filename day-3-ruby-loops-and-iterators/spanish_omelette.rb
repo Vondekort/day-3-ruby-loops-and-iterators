@@ -67,7 +67,7 @@ steps = [
   { description: "Put the pastry into a ovendish and make sure you cover the whole dish", action: "generic_recipe_step"},
   { description: "Put everything in the ovendish", action: "generic_recipe_step" },
   { description: "Cover the top of the ovendish with some pastry", action: "generic_recipe_step"},
-  { description: "Bake for about 25 minutes untill it nice light brown", action: "generic_recipe_step"},
+  { description: "Bake for about 35 minutes untill it nice light brown", action: "generic_recipe_step"},
 ]
 
 print_divider
@@ -82,7 +82,7 @@ def generic_recipe_step
   print_progress_bar
 end
 
-def scrape_potatoes
+def scrape_carrots
   counter = 0
   while counter < NUM_CARROTS
     counter += 1
@@ -91,7 +91,7 @@ def scrape_potatoes
   end
 end
 
-def cut_potatoes
+def cut_carrots
   counter = 0
   while counter < NUM_CARROTS
     counter += 1
@@ -100,7 +100,7 @@ def cut_potatoes
   end
 end
 
-def add_potatoes_to_pan
+def add_carrots_to_pan
   for counter in 1..NUM_CARROTS
     print "Adding carrot #{counter} to the pan."
     print_progress_bar
